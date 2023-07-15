@@ -1,0 +1,645 @@
+/*CSS Reset / Normalize*/
+/* Hemos disponibilizado el básico de reset de estilos. Si quieren, añadan más informaciones 
+en las secciones señaladas */
+/*Já deixaremos o básico de reset de estilos. Caso queira adicionar mais informações
+coloque nas sessões indicadas*/
+
+:root{
+    /* Inserta la variable de los otros colores inspeccionando el exemplo de figma */
+    /*Se esforce para trabalhar com variáveis, é uma dica profissional valiosa*/
+   /* --cor-de-fundo: #F5F5F5; */
+   --cor-de-link: #000;
+   --cor-de-fundo: #1d6F1daf;
+
+}
+
+body {
+    box-sizing: border-box;
+    background-color: var(--cor-de-fundo) ;
+    font-family: 'Raleway';
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    min-height: 10vh;
+}
+ol, ul,li {
+    list-style: none;
+    padding-inline-start: 0px;
+}
+a{
+    text-decoration: none;
+    color: var(--cor-de-link);
+}
+
+/*En este desafío nosostros gustaríamos que ustedes intentaran utilizar la metodología BEM. 
+
+Lo que es el BEM?
+
+BEM (Bloque, Elemento, Modificador) es un enfoque basado en componentes para el 
+desarrollo web. La idea detrás de esto es dividir la interfaz de usuario en bloques
+independientes. Esto hace que el desarrollo de la interfaz sea fácil y rápido, incluso
+con una interfaz de usuario compleja, y permite la reutilización del código existente sin copiar y pegar.
+
+Enlace de la documentación oficial!
+https://en.bem.info/methodology/quick-start/*/
+
+
+.animacion{
+    position: relative;
+    width: 100%;
+    height: 1000vh;
+    overflow: hidden;
+}
+.animacion__luces{
+    width: 100%;
+
+    position: relative;
+    display: flex;
+
+}
+.animacion__luces__luz{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #4fc3dc;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44,
+    0 0 50px #4fc3dc,
+    0 0 100px #4fc3dc;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(560s / var(--i));
+    animation: animate 12s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+    animation-duration: calc(560s / var(--i));
+
+}
+
+.animacion__luces__luz:nth-child(even){
+    background: #4cfd3c;
+    box-shadow: 0 0 0 10px #4cfd3c44,
+    0 0 50px #4cfd3c,
+    0 0 100px #4cfd3c;
+
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(1200vh) scale(0);
+    }
+    100% {
+        transform: translateY(-100vh) scale(.45);
+    }
+}
+
+.tudo{
+    background-color:  transparent;
+    position: absolute;
+    z-index: 2;
+}
+
+/*Sección Menu*/
+.menu{
+    display: flex;
+    height: 40px;
+    align-items: center;
+    margin: 20px 10px 10px 10px;
+    width: 100%;
+    border-radius: 9px;
+    background-color: rgba(128, 128, 128, 0.20);   
+    justify-content: space-between;
+    border: 2px solid #fafafa10; /* glassmorphism */
+    position: sticky;
+    top: 5px;
+}
+.menu h2{
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 3em;
+    background-color: rgba(0, 0, 255, 0.5);
+    padding: 10px;
+    border-radius: 50%;
+    filter: blur(1%);
+
+}
+.menu__img{
+    margin-left: -40px;
+}
+.menu__header{
+    display: flex;
+    height: 30px;
+    align-items: center;
+    white-space: nowrap;
+}
+.menu__title{
+margin: 0 10px 0 25px;
+}
+.menu__list{
+    display: flex;
+    width: 30%;
+    height: 30px;
+    align-items: center;
+    /* justify-content:left; */
+}
+.menu__list__item{
+    /* border-left: 1px solid #000; */
+    display: flex;
+    width: 100%;
+    height: 30px;
+    border-radius: 9px;
+    background-color: rgba(128, 128, 128, 0.30);
+    margin: 4px;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px;
+    white-space: nowrap;
+
+    /* text-shadow:0 1px #ffffffc9; */
+    border-right: 1px solid #0000009a; 
+    border-bottom: 1px solid #0000009a; 
+    border-left:  1px solid #ffffff9a;
+    border-top:  1px solid #ffffff9a;
+    box-shadow: 1.5px 1.5px #0055009a, 0 0 2px 2px #66ff669a;
+    /* box-shadow: 0px 2px 0 darken($red, 5%), 2px 4px 6px darken($red, 2%); */
+
+    /* font-size: 0.8em; */
+    }
+/*Sección Title*/
+
+.title__div{
+    display: flex;
+    background-color:  transparent;
+    margin: 5%;
+
+
+}
+.title__profile{
+    background-color: transparent;
+    height: 368px;
+    width: 368px; 
+    /* raleway */
+
+}
+
+.title__bio{
+font-family: raleway;
+font-size: 52px;
+font-weight: bold;
+margin-left: 25px;
+
+}
+.title__subsection{
+    font-family: raleway;
+    font-size: 22px;
+    padding: 24px auto;
+    margin-left: 25px;
+}
+
+.title__network{
+    display: flex;
+}
+
+.title__network__item{
+    display: flex;
+    height: 30px;
+    width: 90px;
+    border: 2px solid #f5f5f520;
+    border-bottom: 3px solid #f5f5f520;
+    background: #ffffff20;
+    backdrop-filter: blur (0,4rem);
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+/*Sección About*/
+
+section.about{  
+    display: flex;
+    height: 250px;
+    width: 100%;
+    border: 2px solid #f5f5f520;
+    border-bottom: 3px solid #f5f5f520;
+    background: #ffffff20;
+    backdrop-filter: blur (0,4rem);
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    margin: 5% 0;
+    padding: 15px 0;
+
+}
+.about__title{
+    font-family: raleway;
+    font-weight: bold;
+    font-size: 32px;
+    /* text-align: center; */
+}
+
+
+
+/* Seccion Skills */
+
+.skills__title{
+    font-family: raleway;
+    font-weight: bold;
+    font-size: 32px;
+    text-align: center;
+}
+
+
+.skills__line{
+    margin: 0 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.skills__box{
+    display: flex;
+    height: 6rem;
+    width:  6rem;
+    border: 2px solid #f5f5f520;
+    border-bottom: 3px solid #f5f5f520;
+    background: #ffffff20;
+    backdrop-filter: blur (0,4rem);
+    border-radius: 15px;
+    justify-content: center;
+}
+.skills__box ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.skills__img{
+    transform: scale(1.5);
+    margin: 10px;
+}
+
+/*Sección Hobbies*/
+
+.hobbies__title{
+    font-family: raleway;
+    font-weight: bold;
+    font-size: 32px;
+    text-align: center;
+}
+
+
+
+.hobbies__line{
+    margin: 0 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.hobbies__box{
+    display: flex;
+    height: 6rem;
+    width: 6rem;
+    border: 1px solid #f5f5f520;
+    border-bottom: 3px solid #f5f5f520;
+    background: #ffffff20;
+    backdrop-filter: blur (0,4rem);
+    border-radius: 15px;
+    justify-content: center;
+}
+.hobbies__box ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.hobbies__img{
+    transform: scale(1.5);
+    margin: 10px;
+}
+
+/* Experiencia Académica*/
+
+section.academic{
+    height: 368px;
+    width: 100%;
+    border: 2px solid #f5f5f520;
+    border-bottom: 3px solid #f5f5f520;
+    background: #ffffff20;
+    backdrop-filter: blur (0,4rem);
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    margin: 5% 0;
+    padding: 82px 0;
+
+}
+.academic__title{
+    font-family: raleway;
+    font-weight: bold;
+    font-size: 32px;
+    text-align: center;
+}
+
+.academic__courses{
+display: flex;
+justify-content: space-around;
+
+}
+
+.academic__courses__box{
+    display: flex;
+    height: 347px;
+    width: 370px;
+
+}
+.academic__courses__list{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: center;
+    text-align: left;
+
+}
+.academic__courses__item__img{
+    display: flex;
+    border: 2px solid #f5f5f520;
+    border-bottom: 3px solid #f5f5f520;
+    background: #ffffff20;
+    backdrop-filter: blur (0,4rem);
+    border-radius: 15px;
+    padding: 68px;
+    align-self: center;
+}
+.academic__courses__item__img{
+    height: 130px;
+    width: 192px;
+
+}
+
+.academic__courses__item__title{
+    font-family: raleway;
+    font-weight: bold;
+    font-size: 22px;
+    height: 2.5rem;
+}
+
+.academic__courses__item__subtitle{
+    font-family: raleway;
+    font-size: 1rem;
+    height: 3rem;
+
+}
+
+
+/* experiencia*/
+
+section.experience{
+    margin: 5% 0;
+
+}
+.experience__section__title{
+    font-family: raleway;
+    font-weight: bold;
+    font-size: 32px;
+    text-align: center;
+}
+
+.experience__box{
+    margin: 5%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    /* flex-direction: row-reverse; */
+}
+
+.experience__img{
+    width: 60%;
+}
+.experience__info{
+    margin: 2%;
+    padding: 1%;
+    width: 368px;
+    border: 2px solid #f5f5f520;
+    border-bottom: 3px solid #f5f5f520;
+    background: #ffffff20;
+    backdrop-filter: blur (0,4rem);
+    border-radius: 15px;
+
+}
+
+.experience__title{
+    width: 100%;
+    font-family: raleway;
+    font-weight: bold;
+    font-size: 22px;
+    height: 2.5rem;
+}
+
+.experience__text{
+    font-family: raleway;
+    font-size: 1rem;
+    height: 3rem;
+
+}
+
+.experiencia__botao--repo{
+    margin: 8px;
+    height: 3rem;
+    width: 5rem;
+    border: 2px solid #f5f5f520;
+    border-bottom: 3px solid #f5f5f520;
+    background: #ffffff20;
+    backdrop-filter: blur (0,4rem);
+   
+}
+
+.experience__botao--demo{
+    margin: 8px;
+    height: 3rem;
+    width: 5rem;
+    border: 2px solid #f5f5f520;
+    border-bottom: 3px solid #f5f5f520;
+    background: #ffffff60;
+    backdrop-filter: blur (0,4rem);
+
+}
+.reverse{
+        flex-direction: row-reverse;
+
+}
+
+
+/*Contacto*/
+
+.formcontato__contacto{
+    height: 788px;
+    width: 100%;
+    border: 2px solid #f5f5f520;
+    border-bottom: 3px solid #f5f5f520;
+    background: #ffffff20;
+    backdrop-filter: blur (0,4rem);
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    margin: 5% 0;
+    padding: 64px 64px 64px 64px;
+    display: flex;
+
+}
+
+.formcontato__img{
+    width: 464px;
+    height: 593px;
+    margin-right: 16px;
+}
+
+.formcontato__text{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 593px;
+    width: 100%;
+}
+
+.formcontato__title {
+    font-weight: bold;
+    font-size: 22px;
+    height: 2.5rem;
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.formcontato__subtext{
+    font-family: raleway;
+    font-size: 1rem;
+    height: 3rem;
+    font-weight: normal;
+    margin: 0;
+}
+.formcontato__form{
+    display:flex;
+    flex-direction: column;
+   
+}
+.formcontato__input{
+    margin-top: 32px;
+    height: 56px;
+    border-radius: 4px;
+
+    border: 2px solid #f5f5f520;
+    border-bottom: 3px solid #f5f5f520;
+    background: #ffffff20;
+    backdrop-filter: blur (0,4rem);
+
+
+}
+.formcontato__textarea{
+    margin: 32px 0;
+    height: 133px;
+    border-radius: 4px;
+
+    border: 2px solid #f5f5f520;
+    border-bottom: 3px solid #f5f5f520;
+    background: #ffffff20;
+    backdrop-filter: blur (0,4rem);
+
+}
+.formcontato__botao{
+    height: 51px;
+    width: 144px;
+    font-family: raleway;
+    font-size: 1rem;
+    font-weight: normal;
+    margin: 0;
+
+}
+
+
+
+/*footeer*/
+
+section.footer{
+   
+}
+
+/* Vamos a desafiarnos trabajando con responsividad?
+Utiliza las referencias de los breakpoints @media abajo */
+
+
+/*Tablet*/
+@media (min-width: 768px) {
+
+/* Menú */
+
+/*title*/
+
+/*Skills*/
+
+/*Hobbies*/
+
+/*Formación Académica*/
+
+/*Experiencia Profesional*/
+
+}
+
+/*Mobile*/
+@media (min-width: 425px) {
+
+/*Menu*/
+
+/*Titulo*/
+
+/*Sección sobre mi*/
+
+/*Skills*/
+
+/*Hobbies*/
+ 
+/*Formación Académica*/
+
+/*Experiencia Profesional*/
+
+ /*Contacto*/
+
+/*Footer*/
+
+}
+
+/* BOTON COPADO "3D"
+
+.btn-3 {
+    background: lighten($red, 3%);  
+    border: 1px solid darken($red, 4%);
+    box-shadow: 0px 2px 0 darken($red, 5%), 2px 4px 6px darken($red, 2%);
+    font-weight: 900;
+    letter-spacing: 1px;
+    transition: all 150ms linear;
+  }
+  
+  .btn-3:hover {
+    background: darken($red, 1.5%);
+    border: 1px solid rgba(#000, .05);
+    box-shadow: 1px 1px 2px rgba(#fff, .2);
+    color: lighten($red, 18%); 
+    text-decoration: none;
+    text-shadow: -1px -1px 0 darken($red, 9.5%);
+    transition: all 250ms linear;
+  }
+
+
+  OTRO 
+  
+  .button {
+  min-width: 300px;
+  min-height: 60px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #4FD1C5;
+background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+  transition: all 0.3s ease-in-out 0s;
+
+
+   */
